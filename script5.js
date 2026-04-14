@@ -1,180 +1,180 @@
-// Task 1: E-commerce Cart System
+// // Task 1: E-commerce Cart System
 
-// Concepts: spread, array methods, object manipulation
+// // Concepts: spread, array methods, object manipulation
 
-let cart1 = [
-    {name: "Shirt", price: 500},
-    {name: "Shoe", price: 1500},
-]
+// let cart1 = [
+//     {name: "Shirt", price: 500},
+//     {name: "Shoe", price: 1500},
+// ]
 
-let cart2 = [
-    {name: "Watch", price: 2000},
-]
+// let cart2 = [
+//     {name: "Watch", price: 2000},
+// ]
 
-let finalCart = [...cart1, ...cart2];
-console.log(finalCart);
+// let finalCart = [...cart1, ...cart2];
+// console.log(finalCart);
 
-finalCart.push({name: "Bag", price: 800});
-console.log(finalCart);
+// finalCart.push({name: "Bag", price: 800});
+// console.log(finalCart);
 
-finalCart.pop();
-console.log(finalCart);
+// finalCart.pop();
+// console.log(finalCart);
 
-let totalPrice = finalCart.reduce((total, item) => total + item.price, 0);
-console.log("Total Price: " + totalPrice);
+// let totalPrice = finalCart.reduce((total, item) => total + item.price, 0);
+// console.log("Total Price: " + totalPrice);
 
-// Task 2: User Profile Management
+// // Task 2: User Profile Management
 
-// Concepts: object spread, destructuring
+// // Concepts: object spread, destructuring
 
-let user = {
-    name : "Vivek",
-    role : "Trainee",
-    salary : 10000
-}
-let updateUser = {
-    role : "Developer",
-    salary : 20000
-}
+// let user = {
+//     name : "Vivek",
+//     role : "Trainee",
+//     salary : 10000
+// }
+// let updateUser = {
+//     role : "Developer",
+//     salary : 20000
+// }
 
-let updatedUser = {...user, ...updateUser};
-console.log(updatedUser);
+// let updatedUser = {...user, ...updateUser};
+// console.log(updatedUser);
 
-let {name, role, salary} = updatedUser;
-console.log(`${name} is now a ${role} earning ${salary}.`);
+// let {name, role, salary} = updatedUser;
+// console.log(`${name} is now a ${role} earning ${salary}.`);
 
-// Task 3: Function with Rest Operator (Team Score System)
-// Concepts: rest operator
+// // Task 3: Function with Rest Operator (Team Score System)
+// // Concepts: rest operator
 
-function teamScore(teamName,...scores) {
-    console.log("Team:" + teamName);
-    console.log("Scores:" + scores);
+// function teamScore(teamName,...scores) {
+//     console.log("Team:" + teamName);
+//     console.log("Scores:" + scores);
 
-    let totalScore = scores.reduce((total, score) => total + score, 0);
-    console.log("Total Score:" + totalScore);
+//     let totalScore = scores.reduce((total, score) => total + score, 0);
+//     console.log("Total Score:" + totalScore);
 
-    let highestScore = Math.max(...scores);
-    console.log("Highest Score:" + highestScore);
-}
+//     let highestScore = Math.max(...scores);
+//     console.log("Highest Score:" + highestScore);
+// }
 
-teamScore("SRH", 200, 150, 180);
+// teamScore("SRH", 200, 150, 180);
 
-// Task 4: Nested Data Extraction (API Response Simulation)
-// Concepts: nested destructuring
+// // Task 4: Nested Data Extraction (API Response Simulation)
+// // Concepts: nested destructuring
 
-let apiData = {
-    user: {
-        name : "Vivek",
-        address: {
-            city: "Siddipet",
-            pincode: 502103
-        }
-    }
-}
-let {
-    user: {
-        name : userName,
-        address: {
-            city,
-            pincode
-        }
-    }
-} = apiData;
+// let apiData = {
+//     user: {
+//         name : "Vivek",
+//         address: {
+//             city: "Siddipet",
+//             pincode: 502103
+//         }
+//     }
+// }
+// let {
+//     user: {
+//         name : userName,
+//         address: {
+//             city,
+//             pincode
+//         }
+//     }
+// } = apiData;
 
-console.log(`${userName} lives in ${city} - ${pincode}.`);
+// console.log(`${userName} lives in ${city} - ${pincode}.`);
 
-//Task 5: Array Dashboard (Admin Panel)
-//Concepts: splice, slice, includes, indexOf
+// //Task 5: Array Dashboard (Admin Panel)
+// //Concepts: splice, slice, includes, indexOf
 
-let users = ["A", "B", "C", "D", "E"];
+// let users = ["A", "B", "C", "D", "E"];
 
-// Remove "C" and "D" using splice
-users.splice(2, 2);
-console.log(users);
+// // Remove "C" and "D" using splice
+// users.splice(2, 2);
+// console.log(users);
 
-//Add "X", "Y" in same place
-users.splice(2, 0, "X", "Y");
-console.log(users);
+// //Add "X", "Y" in same place
+// users.splice(2, 0, "X", "Y");
+// console.log(users);
 
-//Get only first 3 users using slice
-let firstThreeUsers = users.slice(0, 3);
-console.log(firstThreeUsers);
+// //Get only first 3 users using slice
+// let firstThreeUsers = users.slice(0, 3);
+// console.log(firstThreeUsers);
 
-//Check if "B" exists
-let hasB = users.includes("B");
-console.log("Contains B: " + hasB);
+// //Check if "B" exists
+// let hasB = users.includes("B");
+// console.log("Contains B: " + hasB);
 
-//Find index of "E"
-let indexOfE = users.indexOf("E");
-console.log("Index of E: " + indexOfE);
+// //Find index of "E"
+// let indexOfE = users.indexOf("E");
+// console.log("Index of E: " + indexOfE);
 
-// Task 6: Data Cleaning Tool
-//Concepts: flat, filter, type handling
+// // Task 6: Data Cleaning Tool
+// //Concepts: flat, filter, type handling
 
-let messyData = [1, 2, [3, 4, [5]], null, undefined, "hello"]
+// let messyData = [1, 2, [3, 4, [5]], null, undefined, "hello"]
 
-// Flatten the array
-let flattenedData = messyData.flat(Infinity);
-console.log(flattenedData);
+// // Flatten the array
+// let flattenedData = messyData.flat(Infinity);
+// console.log(flattenedData);
 
-//Remove null and undefined
-let cleanedData = flattenedData.filter(item => item !== null && item !== undefined);
-console.log(cleanedData);
+// //Remove null and undefined
+// let cleanedData = flattenedData.filter(item => item !== null && item !== undefined);
+// console.log(cleanedData);
 
-//Output clean array
-console.log("Cleaned Data: " + cleanedData);
+// //Output clean array
+// console.log("Cleaned Data: " + cleanedData);
 
-//Task 7: Sorting Bug Fix 
-//Concepts: sort()
+// //Task 7: Sorting Bug Fix 
+// //Concepts: sort()
 
-let prices = [1000, 200, 50, 5000]
+// let prices = [1000, 200, 50, 5000]
 
-//Sort correctly in ascending order
-prices.sort((a, b) => a - b); // the default sort fails beacause it sorts elements as strings, not numbers
-console.log("Sorted Prices: " + prices);
+// //Sort correctly in ascending order
+// prices.sort((a, b) => a - b); // the default sort fails beacause it sorts elements as strings, not numbers
+// console.log("Sorted Prices: " + prices);
 
-//Task 8: Analytics Report Generator
-// Concepts: reduce 
+// //Task 8: Analytics Report Generator
+// // Concepts: reduce 
 
-let order = [
-    {id: 1,amount: 100},
-    {id: 2,amount: 200},
-    {id: 3,amount: 300}
-]
+// let order = [
+//     {id: 1,amount: 100},
+//     {id: 2,amount: 200},
+//     {id: 3,amount: 300}
+// ]
 
-let totalAmount = order.reduce((total, item ) => total + item.amount, 0);
-console.log("Total Order Amount: " + totalAmount);
+// let totalAmount = order.reduce((total, item ) => total + item.amount, 0);
+// console.log("Total Order Amount: " + totalAmount);
 
-let avgAmount = totalAmount / order.length;
-console.log("Average Order Amount: " + avgAmount);
+// let avgAmount = totalAmount / order.length;
+// console.log("Average Order Amount: " + avgAmount);
 
-//Task 9: Inventory System (Advanced)
-//Concepts: combine everything
+// //Task 9: Inventory System (Advanced)
+// //Concepts: combine everything
 
-let inventory1 = ["Laptop", "Phone", "Tablet"];
-let inventory2 = ["Monitor", "Keyboard", "Mouse"];
+// let inventory1 = ["Laptop", "Phone", "Tablet"];
+// let inventory2 = ["Monitor", "Keyboard", "Mouse"];
 
-inventory2.push("Headphones");
-console.log(inventory2);
+// inventory2.push("Headphones");
+// console.log(inventory2);
 
-inventory1.pop();
-console.log(inventory1);
+// inventory1.pop();
+// console.log(inventory1);
 
-inventory2.splice(2, 1, "Smartphone");
-console.log(inventory2);
+// inventory2.splice(2, 1, "Smartphone");
+// console.log(inventory2);
 
-console.log("Laptop in inventory1: " + inventory1.includes("Laptop"));
+// console.log("Laptop in inventory1: " + inventory1.includes("Laptop"));
 
-let combinedInventory = [...inventory1, ...inventory2];
-console.log("Combined Inventory: " + combinedInventory);
+// let combinedInventory = [...inventory1, ...inventory2];
+// console.log("Combined Inventory: " + combinedInventory);
 
-// Task 10: 
+// // Task 10: 
 
-function processData(...data) {
-    let flatData = data.flat(Infinity);
-    let uniqueData = [...new Set(flatData)];
-    uniqueData.sort((a, b) => a - b);
-    return uniqueData;
-}
+// function processData(...data) {
+//     let flatData = data.flat(Infinity);
+//     let uniqueData = [...new Set(flatData)];
+//     uniqueData.sort((a, b) => a - b);
+//     return uniqueData;
+// }
 
-console.log(processData(1,2,[3,4],[5,[6]]))
+// console.log(processData(1,2,[3,4],[5,[6]]))
