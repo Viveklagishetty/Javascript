@@ -197,3 +197,6 @@ console.log("Any order greater than 1000? " + hasHighValueOrder);
 //Sort orders by amount (ascending)
 let sortedOrders = orders.sort((a, b) => a.amount - b.amount);
 console.log("Orders sorted by amount: ", sortedOrders); 
+
+
+console.clear();
